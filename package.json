@@ -1,7 +1,7 @@
 {
   "name": "index-json",
   "version": "0.0.1",
-  "description": "Index JSON objects with selected properties / keys",
+  "description": "Index JSON objects with selected properties or keys",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -10,7 +10,10 @@
     "json",
     "index",
     "search",
-    "filter"
+    "filter",
+    "json-search",
+    "json-filter",
+    "json-index"
   ],
   "author": "Sriram Thiagarajan <sri.sjc@gmail.com> (https://github.com/tsriram)",
   "license": "MIT",

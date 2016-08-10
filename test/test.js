@@ -13,6 +13,8 @@ var obj2_result = [
 	{city: 'Chennai', state: 'Tamil Nadu', _index: 'chennaitamilnadu'},
 	{city: 'Mumbai', state: 'Maharashtra', _index: 'mumbaimaharashtra'}
 ];
+var obj3 = { city: 'Chennai', dist: 'Chennai'};
+var obj3_result = [{ city: 'Chennai', dist: 'Chennai', _index: 'chennai'}];
 var keys = ['city', 'state'];
 
 describe('Index JSON', function() {
@@ -43,5 +45,10 @@ describe('Index JSON', function() {
 		var temp2 = JSON.parse(JSON.stringify(temp1));
 		var result = ij.index(temp1, keys);
 		expect(temp1).to.deep.equal(temp2);
+	});
+
+	it('should index only the available keys', function() {
+		var result = ij.index(obj3, keys);
+		expect(result).to.deep.equal(obj3_result);
 	});
 });

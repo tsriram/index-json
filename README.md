@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/tsriram/index-json.svg?branch=master)](https://travis-ci.org/tsriram/index-json)
+[![Coverage Status](https://coveralls.io/repos/github/tsriram/index-json/badge.svg?branch=master)](https://coveralls.io/github/tsriram/index-json?branch=master)
+
 # index-json
 
 Many times you have a JSON on which you have to do a simple string search and you have to look up all those keys for which search / filter needs to be enabled. One simple solution is to have a separate index key/property in JSON and do the string search only on that key. This script just does add `_index` key to your JSON whose value is the concatenated values(converted to lower case) of the keys you pass.

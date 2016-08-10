@@ -11,16 +11,16 @@
 function indexJSON(obj, keys) {
 	var cloneObj = [];
 
-	if(!obj || !keys) {
-		return new Error('Invalid object or keys');
+	if(!(obj && keys)) {
+		throw new Error('Invalid obj or keys');
 	}
 
 	if(!(typeof obj === 'object' || Array.isArray(obj))) {
-		return new Error('Not a proper JSON object or Array');
+		throw new Error('obj is not a proper JSON');
 	}
 
 	if(!Array.isArray(keys)) {
-		return new Error('keys should be an array');
+		throw new Error('keys should be an array');
 	}
 
 	if(!Array.isArray(obj)) {

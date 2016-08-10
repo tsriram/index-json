@@ -13,5 +13,9 @@
     "filter"
   ],
   "author": "Sriram Thiagarajan <sri.sjc@gmail.com> (https://github.com/tsriram)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
 }

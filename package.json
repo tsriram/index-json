@@ -1,0 +1,17 @@
+{
+  "name": "index-json",
+  "version": "0.0.1",
+  "description": "Index JSON objects with selected properties / keys",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "json",
+    "index",
+    "search",
+    "filter"
+  ],
+  "author": "Sriram Thiagarajan <sri.sjc@gmail.com> (https://github.com/tsriram)",
+  "license": "MIT"
+}

@@ -25,6 +25,9 @@ var obj4_result_skip = [{ city: 'Chennai', state: 'NA', _index: 'chennai'}];
 var obj5 = { city: 'Chennai', state: { name: 'Tamil Nadu'}};
 var obj5_result = [{city: 'Chennai', state: { name: 'Tamil Nadu'}, _index: 'chennai'}];
 
+var obj6 = { city: 'NA', state: 'Andaman and Nicobar Islands'};
+var obj6_result = [{ city: 'NA', state: 'Andaman and Nicobar Islands', _index: 'andamanandnicobarislands'}];
+
 var keys = ['city', 'state'];
 
 describe('Index JSON', function() {
@@ -65,6 +68,11 @@ describe('Index JSON', function() {
 	it('should index only the available keys even if skipValue is given', function() {
 		var result = ij.index(obj3, keys, 'na');
 		expect(result).to.deep.equal(obj3_result);
+	});
+
+	it('should index the available keys even if skipValue is given', function() {
+		var result = ij.index(obj6, keys, 'NA');
+		expect(result).to.deep.equal(obj6_result);
 	});
 
 	it('should throw "skipValue should be a string" error', function() {

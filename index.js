@@ -8,7 +8,7 @@
 * @return {Array of objects with _index property added}
 */
 
-function indexJSON(obj, keys) {
+function indexJSON(obj, keys, skipValue) {
 	var cloneObj = [];
 
 	if(!(obj && keys)) {
@@ -23,6 +23,12 @@ function indexJSON(obj, keys) {
 		throw new Error('keys should be an array');
 	}
 
+	if(skipValue) {
+		if(typeof skipValue !== 'string') {
+			throw new Error('skipValue should be a string');
+		}
+	}
+
 	if(!Array.isArray(obj)) {
 		cloneObj = [JSON.parse(JSON.stringify(obj))];
 	}else {
@@ -31,10 +37,24 @@ function indexJSON(obj, keys) {
 
 	cloneObj.forEach(function(o) {
 		var index = "";
-		keys.forEach(function(k) {
-			if(o[k] && typeof o[k] !== 'object')
-				index += o[k].toString().toLowerCase().replace(/ /g, '');
-		});
+		if(skipValue) {
+			skipValue = skipValue.toLowerCase().replace(/ /g, '');
+			keys.forEach(function(k) {
+				if(o[k] && typeof o[k] !== 'object') {
+					var val = o[k].toString().toLowerCase().replace(/ /, '');
+					if(val !== skipValue) {
+						index += val;
+					}
+				}
+			});
+		}else {
+			keys.forEach(function(k) {
+				if(o[k] && typeof o[k] !== 'object'){
+					var val = o[k].toString().toLowerCase().replace(/ /, '');
+					index += val;
+				}
+			});
+		}
 		o['_index'] = index;
 	});
 

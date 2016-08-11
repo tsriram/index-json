@@ -42,7 +42,7 @@ function indexJSON(obj, keys, skipValue) {
 			skipValue = skipValue.toLowerCase().replace(/ /g, '');
 			keys.forEach(function(k) {
 				if(o[k] && typeof o[k] !== 'object') {
-					var val = o[k].toString().toLowerCase().replace(/ /, '');
+					var val = o[k].toString().toLowerCase().replace(/ /g, '');
 					if(val !== skipValue) {
 						index += val;
 					}
@@ -51,7 +51,7 @@ function indexJSON(obj, keys, skipValue) {
 		}else {
 			keys.forEach(function(k) {
 				if(o[k] && typeof o[k] !== 'object'){
-					var val = o[k].toString().toLowerCase().replace(/ /, '');
+					var val = o[k].toString().toLowerCase().replace(/ /g, '');
 					index += val;
 				}
 			});

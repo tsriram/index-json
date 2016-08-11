@@ -1,6 +1,6 @@
 {
   "name": "index-json",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Index JSON objects with selected properties or keys",
   "main": "index.js",
   "scripts": {

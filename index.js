@@ -5,6 +5,7 @@
 * creates _index property in each object by concatenating selected properties
 *	@param {Array of objects or object} obj
 * @param {Array of strings} keys
+* @param {string} skipValue - to skip a value from being added to index
 * @return {Array of objects with _index property added}
 */
 
